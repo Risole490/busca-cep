@@ -83,7 +83,7 @@
                 const btnNovaBusca = document.createElement('button');
                 // 8.2 Adiciono um id à ele
                 btnNovaBusca.id = 'nova-busca';
-                btnNovaBusca.classList.add('btnNovaBusca')
+                btnNovaBusca.classList.add('btnNovaBusca');
                 // 8.3 Adiciono um texto ao botão
                 btnNovaBusca.innerHTML = "Nova busca";
                     // 8.4 Adiciono o botão à div, logo após a <table> 
