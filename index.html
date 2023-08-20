@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca CEP</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="container-cabecalho">
+            <h2 class="cabecalho-text">Home</h2>
+        </div>
+    </header>
+
+    <section class="banner">
+        <h2 class="banner-text">Buscar CEP/Endereço</h2>
+    </section>
+
+    <main class="principal">
+        <div class="cep-container">
+            <div class="buscacep-container">
+                <label class="text-label" for="cep">Digite o CEP:</label>
+                <input name="cep" id="cep" type="text" class="inputs" size="10" required>
+                <button class="btnBuscar" id="submit" type="submit">Buscar</button>
+            </div>
+
+            <div id="cep-resultado" class="cep-resultado-container"></div>
+        </div>
+
+        <div class="endereco-container">
+            <h3 class="endereco-container-title">Não sabe o cep?</h3>
+            <div class="buscaendereco-container">
+                <label for="endereco" class="text-label">Pesquise pelo endereço:</label>
+                <input id="endereco" type="text" class="inputs" required>
+                <label for="cidade" class="text-label">Cidade:</label>
+                <input id="cidade" type="text" class="inputs" required>
+                <label for="ufs" class="text-label">Estado/UF:</label>
+                <select id="ufs" class="ufs-select" required>
+                    <option value="">Escolher</option>
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AP">AP</option>
+                    <option value="SP">SP</option>
+                </select>
+            </div>
+            <button id="submit-endereco" type="submit" class="btnBuscar">Buscar</button>
+
+            <div id="end-resultado" class="endereco-resultado-container"></div>
+        </div>
+
+        <!-- O uso desta parte é utilizado somente quando uma table já é criada ao iniciar o site, mas fica como display 'none. 
+             Para usar esta parte,  referencie o arquivo "buscaCEP.js".
+        
+        <div class="result-container" id="cep-resultado">
+            <h3>Resultado da busca pelo CEP:</h3>
+
+             <table class="table-result">
+                <tr class="table-header">
+                    <td>Logradouro</td>
+                    <td>Complemento</td>
+                    <td>Bairro/Distrito</td>
+                    <td>Localidade/UF</td>
+                    <td>DDD</td>
+                    <td>CEP</td>
+                </tr>
+                <tr>
+                    <td id="td-logradouro"></td>
+                    <td id="td-complemento"></td>
+                    <td id="td-bairro"></td>
+                    <td id="td-uf"></td>
+                    <td id="td-ddd"></td>
+                    <td id="td-cep"></td>
+                </tr> 
+            </table> 
+        </div> -->
+    </main>
+
+    <footer class="rodape">
+        <p class="rodape-text">Made by Leoyan</p>
+    </footer>
+    <script src="/js/buscaCEp2.js"></script>
+    <script src="/js/buscaEndereco.js"></script>
+</body>
+</html>

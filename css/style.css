@@ -1,0 +1,148 @@
+.cabecalho {
+    display: flex;
+    justify-content: center;
+    border: 1px solid;
+    margin: 0 0.5em 0 0.5em;
+    padding: 0.5em;
+    border-radius: 0px 0px 5px 5px;
+    background-color: #353535;
+}
+
+.container-cabecalho {
+    padding: 0.2em;
+}
+
+.cabecalho-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    border: 1px solid;
+    margin: 1em 1em 3em 1em;
+    padding: 0.7em;
+    background-color: #3c6e71;
+    border-radius: 5px;
+}
+
+.banner-text {
+    font-size: 40px;
+    color: whitesmoke;
+}
+
+.principal {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid;
+    padding: 1em;
+    margin: 0 1em 1em 1em;
+    background-color: #d9d9d9;
+    border-radius: 5px;
+}
+
+.cep-container {
+    /* border: 1px solid; */
+    padding: 0.5em;
+    row-gap: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tabela-cep {
+    padding: 0.5em;
+    border: 2px solid #353535;
+}
+
+.tabela-cep th {
+    padding: 0.8em;
+    color: whitesmoke;
+    background-color: #284b63;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.tabela-cep td {
+    padding: 0.6em;
+    text-align: center;
+    border-right: 1px solid;
+}
+
+.tabela-cep td:last-child {
+    border: none;
+}
+
+.btnNovaBusca {
+    padding: 0.5em;
+    margin-top: 0.7em;
+    position: relative;
+    left: 50%;
+}
+
+.cep-resultado-container {
+    display: none;
+    /* border: 1px solid; */
+    padding: 0.5em;
+}
+
+/* AGORA O CSS DO ENDERECO */
+
+.endereco-container {
+    /* border: 1px solid; */
+    padding: 0.5em;
+    row-gap: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.endereco-container-title {
+    margin-bottom: 0.3em;
+    font-size: 2.6em;
+    padding: 0.1em;
+}
+
+.text-label {
+    font-size: 20px;
+}
+
+.inputs {
+    padding: 0.3em;
+    border-radius: 3px;
+    border: 1px solid; 
+}
+
+.ufs-select {
+    font-size: 14px;
+}
+
+select option {
+    padding: 0.3em;
+    text-align: center;
+}
+
+.btnBuscar {
+    padding: 0.5em;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+.endereco-resultado-container {
+    display: none;
+}
+
+.rodape {
+    padding: 1em;
+    background-color: #353535;
+    text-align: center;
+}
+
+.rodape-text {
+    color: antiquewhite;
+}
