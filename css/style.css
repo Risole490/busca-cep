@@ -5,10 +5,11 @@
     --fonte-banner: 'Geologica', sans-serif;
     --fonte-principal: 'Manrope', sans-serif;;
     --fonte-secundaria: 'Signika Negative', sans-serif;
-
-
 }
 
+body {
+    background-color: #ebebeb;
+}
 
 .cabecalho {
     display: flex;
