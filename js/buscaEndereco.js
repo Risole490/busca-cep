@@ -1,4 +1,9 @@
 (() => {
+/*  ------------------------------------------
+> Esta versão de script cria a tabela de resultado do endereço junto da função assíncrona.
+> O código de criação da tabela e inserção de dados estão extensos, eu sei disso. Por enquanto é o modo com que eu aprendi a fazer o site funcionar.
+    ------------------------------------------ */
+
     var endereco = document.getElementById('endereco');
     var cidade = document.getElementById('cidade');
     var uf = document.getElementById('ufs');
@@ -65,27 +70,26 @@
 
                 function criaBotaoNovabusca(){    
                     // 8.1 Crio o elemento <button>
-                    const btnNovaBusca = document.createElement('button');
+                    const btnNovaBuscaEND = document.createElement('button');
                     // 8.2 Adiciono um id à ele
-                    btnNovaBusca.id = 'nova-busca';
-                    btnNovaBusca.classList.add('btnNovaBusca')
+                    btnNovaBuscaEND.id = 'nova-buscaEND';
+                    btnNovaBuscaEND.classList.add('btnNovaBuscaEND')
                     // 8.3 Adiciono um texto ao botão
-                    btnNovaBusca.innerHTML = "Nova busca";
+                    btnNovaBuscaEND.innerHTML = "Nova busca";
                         // 8.4 Adiciono o botão à div, logo após a <table> 
-                        mostraResult.appendChild(btnNovaBusca);
+                        mostraResult.appendChild(btnNovaBuscaEND);
                     // 8.5 Crio um evento onde ao clicar neste botão, a div some do display E é limpada para fazer uma nova busca
-                    btnNovaBusca.addEventListener("click", () => {
-                        mostraResult.style.display = "none";
-                        mostraResult.innerHTML = "";
-                        endereco.value = "";
-                        cidade.value = "";
-                        uf.value = "";
+                    btnNovaBuscaEND.addEventListener("click", () => {
+                        location.reload();
+                        btnBuscarEndereco.style.display = "block";
+                        endereco.focus();
                     })
                 }
 
           // Caso o usuário tente fazer uma busca com menos de 3 caracteres em algum campo, o erro é mostrado na tela. 
         } catch(erro) { 
             alert('Insira ao menos 3 caracteres nos campos Endereço e Cidade!');
+            btnBuscarEndereco.style.display = "block";
         }
          // Faço uma validação e verifico se a consulta retornou algum endereço como resultado no array. Se for true, vai executar as funções. Se for false, vai mostrar o erro na tela
         if(consultaEndConvertido.length > 0){
@@ -96,11 +100,13 @@
             alert('Nenhum endereço localizado.');
             endereco.value = "";
             cidade.value ="";
+            btnBuscarEndereco.style.display = "block";
         }
     }
 
     btnBuscarEndereco.addEventListener("click", () => {
         buscaEndereco(endereco.value,cidade.value,uf.value);
+        btnBuscarEndereco.style.display = "none";
     })
 
 })()

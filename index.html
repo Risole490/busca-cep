@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Busca CEP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@600&family=Geologica&family=Manrope&family=Signika+Negative&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -23,7 +26,7 @@
             <div class="buscacep-container">
                 <label class="text-label" for="cep">Digite o CEP:</label>
                 <input name="cep" id="cep" type="text" class="inputs" size="10" required>
-                <button class="btnBuscar" id="submit" type="submit">Buscar</button>
+                <button class="btnBuscarCEP" id="submit" type="submit">Buscar</button>
             </div>
 
             <div id="cep-resultado" class="cep-resultado-container"></div>
@@ -47,42 +50,16 @@
                     <option value="SP">SP</option>
                 </select>
             </div>
-            <button id="submit-endereco" type="submit" class="btnBuscar">Buscar</button>
+            <button id="submit-endereco" type="submit" class="btnBuscarEND">Buscar</button>
 
             <div id="end-resultado" class="endereco-resultado-container"></div>
         </div>
-
-        <!-- O uso desta parte é utilizado somente quando uma table já é criada ao iniciar o site, mas fica como display 'none. 
-             Para usar esta parte,  referencie o arquivo "buscaCEP.js".
-        
-        <div class="result-container" id="cep-resultado">
-            <h3>Resultado da busca pelo CEP:</h3>
-
-             <table class="table-result">
-                <tr class="table-header">
-                    <td>Logradouro</td>
-                    <td>Complemento</td>
-                    <td>Bairro/Distrito</td>
-                    <td>Localidade/UF</td>
-                    <td>DDD</td>
-                    <td>CEP</td>
-                </tr>
-                <tr>
-                    <td id="td-logradouro"></td>
-                    <td id="td-complemento"></td>
-                    <td id="td-bairro"></td>
-                    <td id="td-uf"></td>
-                    <td id="td-ddd"></td>
-                    <td id="td-cep"></td>
-                </tr> 
-            </table> 
-        </div> -->
     </main>
-
+    
     <footer class="rodape">
         <p class="rodape-text">Made by Leoyan 2023.</p>
     </footer>
-    <script src="/js/buscaCEp2.js"></script>
+    <script src="/js/buscaCEP.js"></script>
     <script src="/js/buscaEndereco.js"></script>
 </body>
 </html>
