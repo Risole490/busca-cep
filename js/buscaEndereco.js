@@ -13,7 +13,7 @@
             
                 function criaTabela() {
                     const containerTabela = document.createElement('table');
-                    containerTabela.classList.add('tabela-cep')
+                    containerTabela.classList.add('tabela-resultado')
                     const trow = document.createElement('tr');
                     const theader = document.createElement('th');
                     const theader1 = document.createElement('th');

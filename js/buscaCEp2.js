@@ -26,7 +26,7 @@
 
                 // 7.1 Crio uma elemento com a tag <table> no HTML
                 const tabela = document.createElement('table');
-                tabela.classList.add('tabela-cep')
+                tabela.classList.add('tabela-resultado')
                 // 7.2 Crio a estrutura do cabecalho da <table> no HTML
                 const trow = document.createElement('tr');
                 const theader = document.createElement('th');
