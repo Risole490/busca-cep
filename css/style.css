@@ -1,6 +1,12 @@
 :root {
     --fundo-header: #353535;
     --fundo-banner: #3c6e71;
+    --fonte-header: 'Changa', sans-serif;
+    --fonte-banner: 'Geologica', sans-serif;
+    --fonte-principal: 'Manrope', sans-serif;;
+    --fonte-secundaria: 'Signika Negative', sans-serif;
+
+
 }
 
 
@@ -19,8 +25,9 @@
 }
 
 .cabecalho-text {
-    font-size: 22px;
-    font-weight: bold;
+    font-family: var(--fonte-header);
+    font-size: 38px;
+    font-weight: 600;
     color: whitesmoke;
 }
 
@@ -35,7 +42,8 @@
 }
 
 .banner-text {
-    font-size: 26px;
+    font-family: var(--fonte-banner);
+    font-size: 30px;
     color: whitesmoke;
 }
 
@@ -66,6 +74,10 @@
     align-items: center;
 }
 
+.text-label {
+    font-family: var(--fonte-secundaria);
+}
+
 .tabela-resultado {
     border-collapse: separate;
     border: 2px solid var(--fundo-header);
@@ -74,6 +86,7 @@
 }
 
 .tabela-resultado th {
+    font-family: var(--fonte-banner);
     padding: 0.8em;
     color: whitesmoke;
     background-color: #284b63;
@@ -83,16 +96,18 @@
 }
 
 .tabela-resultado td {
+    font-family: var(--fonte-principal);
     padding: 0.6em;
     text-align: center;
     border-right: 0.1px solid;
+    border-bottom: 0.1px solid;
 }
 
 .tabela-resultado td:last-child {
-    border: none;
+    border-right: none;
 }
 
-.btnNovaBusca {
+.btnNovaBuscaEND, .btnNovaBuscaCEP {
     cursor: pointer;
     padding: 0.7em 1.7em;
     margin-top: 0.7em;
@@ -122,6 +137,7 @@
 }
 
 .endereco-container-title {
+    font-family: var(--fonte-banner);
     margin-bottom: 0.3em;
     font-size: 2.6em;
     padding: 0.1em;
@@ -152,6 +168,7 @@ select option {
 }
 
 .btnBuscarEND, .btnBuscarCEP {
+    font-family: var(--fonte-secundaria);
     padding: 0.7em 1.7em;
     font-size: 16px;
     font-weight: bold;
@@ -170,5 +187,6 @@ select option {
 }
 
 .rodape-text {
-    color: antiquewhite;
+    font-family: var(--fonte-header);
+    color: whitesmoke;
 }

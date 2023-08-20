@@ -81,18 +81,17 @@
             // 8. Crio uma função para criar o botao de nova busca
             function criaBotaoNovabusca(){    
                 // 8.1 Crio o elemento <button>
-                const btnNovaBusca = document.createElement('button');
+                const btnNovaBuscaCEP = document.createElement('button');
                 // 8.2 Adiciono um id à ele
-                btnNovaBusca.id = 'nova-busca';
-                btnNovaBusca.classList.add('btnNovaBusca');
+                btnNovaBuscaCEP.id = 'nova-buscaCEP';
+                btnNovaBuscaCEP.classList.add('btnNovaBuscaCEP');
                 // 8.3 Adiciono um texto ao botão
-                btnNovaBusca.innerHTML = "Nova busca";
+                btnNovaBuscaCEP.innerHTML = "Nova busca";
                     // 8.4 Adiciono o botão à div, logo após a <table> 
-                    mostraResultado.appendChild(btnNovaBusca);
+                    mostraResultado.appendChild(btnNovaBuscaCEP);
                 // 8.5 Crio um evento onde ao clicar neste botão, a div some do display E é limpada para fazer uma nova busca
-                btnNovaBusca.addEventListener("click", () => {
-                    mostraResultado.style.display = "none";
-                    mostraResultado.innerHTML = "";
+                btnNovaBuscaCEP.addEventListener("click", () => {
+                    location.reload();
                     btnBuscarCEP.style.display = "inline-block";
                 })
             }

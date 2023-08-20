@@ -70,22 +70,19 @@
 
                 function criaBotaoNovabusca(){    
                     // 8.1 Crio o elemento <button>
-                    const btnNovaBusca = document.createElement('button');
+                    const btnNovaBuscaEND = document.createElement('button');
                     // 8.2 Adiciono um id à ele
-                    btnNovaBusca.id = 'nova-busca';
-                    btnNovaBusca.classList.add('btnNovaBusca')
+                    btnNovaBuscaEND.id = 'nova-buscaEND';
+                    btnNovaBuscaEND.classList.add('btnNovaBuscaEND')
                     // 8.3 Adiciono um texto ao botão
-                    btnNovaBusca.innerHTML = "Nova busca";
+                    btnNovaBuscaEND.innerHTML = "Nova busca";
                         // 8.4 Adiciono o botão à div, logo após a <table> 
-                        mostraResult.appendChild(btnNovaBusca);
+                        mostraResult.appendChild(btnNovaBuscaEND);
                     // 8.5 Crio um evento onde ao clicar neste botão, a div some do display E é limpada para fazer uma nova busca
-                    btnNovaBusca.addEventListener("click", () => {
-                        mostraResult.style.display = "none";
-                        mostraResult.innerHTML = "";
-                        endereco.value = "";
-                        cidade.value = "";
-                        uf.value = "";
+                    btnNovaBuscaEND.addEventListener("click", () => {
+                        location.reload();
                         btnBuscarEndereco.style.display = "block";
+                        endereco.focus();
                     })
                 }
 
@@ -103,6 +100,7 @@
             alert('Nenhum endereço localizado.');
             endereco.value = "";
             cidade.value ="";
+            btnBuscarEndereco.style.display = "block";
         }
     }
 
