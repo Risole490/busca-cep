@@ -113,6 +113,10 @@
 
     // 3. Crio uma ação pra quando o botao de Busca for clicado, ele chamar a função e limpar o campo do CEP depois que ela for concluída
     btnBuscarCEP.addEventListener("click", () => {
+        if (cep.value == ""){
+            alert('Campo está vazio!')
+            location.reload();
+        } else 
         buscaCEP(cep.value);
         cep.value = "";
         btnBuscarCEP.style.display = "none";
