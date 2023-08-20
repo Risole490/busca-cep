@@ -1,7 +1,8 @@
 (() => {
 /*  ------------------------------------------
-> Esta versão de script cria a tabela de resultado do CEP junto da função assíncrona;
-> Diferente da versão1, que apenas substitui os valores dos campos(<td>) da tabela;
+> Esta versão de script cria a tabela de resultado do CEP junto da função assíncrona.
+> Diferente da versão 'buscaCEP', que apenas substitui os valores dos campos(<td>) da tabela já existente no HTML.
+> O código de criação da tabela e inserção de dados estão extensos, eu sei disso. Por enquanto é o modo com que eu aprendi a fazer o site funcionar.
     ------------------------------------------ */
 
     // 1. Capturo os componentes do HTML

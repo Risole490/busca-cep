@@ -1,4 +1,9 @@
 (() => {
+/*  ------------------------------------------
+> Esta versão de script cria a tabela de resultado do endereço junto da função assíncrona.
+> O código de criação da tabela e inserção de dados estão extensos, eu sei disso. Por enquanto é o modo com que eu aprendi a fazer o site funcionar.
+    ------------------------------------------ */
+
     var endereco = document.getElementById('endereco');
     var cidade = document.getElementById('cidade');
     var uf = document.getElementById('ufs');
