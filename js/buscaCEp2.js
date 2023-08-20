@@ -19,7 +19,7 @@
             var consultaCEpconvertida = await consultaCEP.json();
             // 6. Se não for encontrado um CEP válido, irá retornar esta mensagem de erro
             if(consultaCEpconvertida.erro) {
-                throw Error('Nenhum resultado!');
+                throw Error('Nenhum resultado! Veifique se o CEP está correto.');
             }
             
             // 7. Crio uma função para criar uma tabela com os dados do json
@@ -93,6 +93,7 @@
                 btnNovaBusca.addEventListener("click", () => {
                     mostraResultado.style.display = "none";
                     mostraResultado.innerHTML = "";
+                    btnBuscarCEP.style.display = "inline-block";
                 })
             }
 
@@ -105,7 +106,8 @@
             mostraResultado.style.display = "block";
 
         } catch(erro) {
-            alert('Formato inválido! Faltam números')
+            alert(erro);
+            btnBuscarCEP.style.display = "inline-block";
         }
         
     }
@@ -114,5 +116,6 @@
     btnBuscarCEP.addEventListener("click", () => {
         buscaCEP(cep.value);
         cep.value = "";
+        btnBuscarCEP.style.display = "none";
     })
 })()

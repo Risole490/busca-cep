@@ -85,12 +85,14 @@
                         endereco.value = "";
                         cidade.value = "";
                         uf.value = "";
+                        btnBuscarEndereco.style.display = "block";
                     })
                 }
 
           // Caso o usuário tente fazer uma busca com menos de 3 caracteres em algum campo, o erro é mostrado na tela. 
         } catch(erro) { 
             alert('Insira ao menos 3 caracteres nos campos Endereço e Cidade!');
+            btnBuscarEndereco.style.display = "block";
         }
          // Faço uma validação e verifico se a consulta retornou algum endereço como resultado no array. Se for true, vai executar as funções. Se for false, vai mostrar o erro na tela
         if(consultaEndConvertido.length > 0){
@@ -106,6 +108,7 @@
 
     btnBuscarEndereco.addEventListener("click", () => {
         buscaEndereco(endereco.value,cidade.value,uf.value);
+        btnBuscarEndereco.style.display = "none";
     })
 
 })()

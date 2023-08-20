@@ -1,3 +1,9 @@
+:root {
+    --fundo-header: #353535;
+    --fundo-banner: #3c6e71;
+}
+
+
 .cabecalho {
     display: flex;
     justify-content: center;
@@ -5,7 +11,7 @@
     margin: 0 0.5em 0 0.5em;
     padding: 0.5em;
     border-radius: 0px 0px 5px 5px;
-    background-color: #353535;
+    background-color: var(--fundo-header);
 }
 
 .container-cabecalho {
@@ -24,7 +30,7 @@
     border: 1px solid;
     margin: 0 1em;
     padding: 0.7em;
-    background-color: #3c6e71;
+    background-color: var(--fundo-banner);
     border-radius: 0px 0px 5px 5px;
 }
 
@@ -48,7 +54,7 @@
     margin: 1em 0;
     height: 390px;
     align-self: center;
-    border: 0.5px solid #3c6e71;
+    border: 0.5px solid var(--fundo-banner);
 }
 
 .cep-container {
@@ -62,7 +68,7 @@
 
 .tabela-resultado {
     border-collapse: separate;
-    border: 1px solid black;
+    border: 2px solid var(--fundo-header);
     border-radius: 5px;
     overflow: hidden;
 }
@@ -87,10 +93,15 @@
 }
 
 .btnNovaBusca {
-    padding: 0.5em;
+    cursor: pointer;
+    padding: 0.7em 1.7em;
     margin-top: 0.7em;
     position: relative;
-    left: 50%;
+    left: 42%;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
 }
 
 .cep-resultado-container {
@@ -140,7 +151,7 @@ select option {
     text-align: center;
 }
 
-.btnBuscar {
+.btnBuscarEND, .btnBuscarCEP {
     padding: 0.7em 1.7em;
     font-size: 16px;
     font-weight: bold;
