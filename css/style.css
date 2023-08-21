@@ -11,6 +11,11 @@ body {
     background-color: #ebebeb;
 }
 
+html, body {
+    width: 100vw;
+    height: 100vh;
+}
+
 .cabecalho {
     display: flex;
     justify-content: center;
@@ -194,4 +199,20 @@ select option {
 .rodape-text {
     font-family: var(--fonte-header);
     color: whitesmoke;
+}
+
+/* MEDIA QUERIES */
+
+/* Telas piticas: 600px and down */
+/* Smartphones: 600px and up */
+/* Tablets: 768px and up */
+/* Desktop: 992px and up */
+/* Telas enormes: 1200px and up */
+
+@media screen and (max-width: 600px) {
+
+}
+
+@media screen and (min-width: 600px) and (max-width: 768px) {
+    
 }
