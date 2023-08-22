@@ -91,7 +91,7 @@ html, body {
     overflow: hidden;
 }
 
-.tabela-resultado th {
+.tabela-resultado th, .tabela-cep th {
     font-family: var(--fonte-banner);
     padding: 0.8em;
     color: whitesmoke;
@@ -101,7 +101,7 @@ html, body {
     font-weight: bold;
 }
 
-.tabela-resultado td {
+.tabela-resultado td, .tabela-cep td {
     font-family: var(--fonte-principal);
     padding: 0.6em;
     text-align: center;
@@ -109,7 +109,7 @@ html, body {
     border-bottom: 0.1px solid;
 }
 
-.tabela-resultado td:last-child {
+.tabela-resultado td:last-child, .tabela-cep td:last-child {
     border-right: none;
 }
 
@@ -128,9 +128,17 @@ html, body {
 }
 
 .cep-resultado-container {
-    display: none;
+    display: block;
     /* border: 1px solid; */
     padding: 0.5em;
+}
+
+.tabela-cep {
+    display: none;
+    border-collapse: separate;
+    border: 2px solid var(--fundo-header);
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 /* .cep-resultado-container-mq {
