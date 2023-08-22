@@ -242,8 +242,8 @@ select option {
         width: 500px;
     }
 
-    .cep-resultado-container-mq {
-        display: none;
-    }
+    /* .cep-resultado-container-mq {
+        display: n;
+    } */
 
 }

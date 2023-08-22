@@ -95,25 +95,10 @@
                     btnBuscarCEP.style.display = "inline-block";
                 })
             }
-
-            function criaDivMQ(){
-                const containerCEPMQ = document.getElementById('cep-resultado-mq');
-
-                containerCEPMQ.innerHTML = `
-                <h3 class="logradouro-title">Logradouro: </h3>
-                <p class="logradouro-value">${consultaCEpconvertida.logradouro}</p>
-                <h3 class="complemento-title">Complemento:</h3>
-                <p class="complemento-value">${consultaCEpconvertida.complemento}</p>
-                `
-                containerCEPMQ.style.display = "block";
-            }
-
             // 9. Chamo a função para criar a tabela
             criaTabela();
-            criaDivMQ();
             // 10. Chamo a função para criar o botao de nova busca
             criaBotaoNovabusca();
-
             // 11. Após os dados serem preenchidos na tabela, eu mostro o container que está a tabela, no display block, que estava como "none"
             mostraResultado.style.display = "block";
 
