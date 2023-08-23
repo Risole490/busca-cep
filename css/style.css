@@ -201,39 +201,3 @@ select option {
     font-family: var(--fonte-header);
     color: whitesmoke;
 }
-
-/* MEDIA QUERIES */
-
-/* Telas piticas: 600px and down */
-/* Smartphones: 600px and up */
-/* Tablets: 768px and up */
-/* Desktop: 992px and up */
-/* Telas enormes: 1200px and up */
-
-@media screen and (max-width: 600px) {
-    .cabecalho-text {
-        font-size: 24px;
-    }
-
-    .banner {
-        margin: 0 2em;
-    }
-
-    .banner-text {
-        font-size: 22px;
-    }
-
-    .principal {
-        flex-direction: column;
-    }
-
-    .linha-meio {
-        height: 0;
-        width: 500px;
-    }
-
-    /* .cep-resultado-container-mq {
-        display: n;
-    } */
-
-}
