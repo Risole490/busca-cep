@@ -38,6 +38,7 @@
     }
     // 7. Crio uma função para criar uma tabela com os dados do json
     function criaTabela(cepzin){
+
         inserirAqui.innerHTML = `
         <tr>
             <th>Logradouro</th>
