@@ -6,7 +6,7 @@
     ------------------------------------------ */
 
     // 1. Capturo os componentes do HTML
-    var cep = document.getElementById('cep');
+    var cep = document.getElementById('input-cep');
     var btnBuscarCEP = document.getElementById('submit');
     var mostraResultado = document.getElementById('cep-resultado');
     const inserirAqui = document.getElementById('table-cep');
@@ -27,63 +27,6 @@
             alert(erro);
             btnBuscarCEP.style.display = "inline-block";
         }
-            
-            // 7. Crio uma função para criar uma tabela com os dados do json
-            // function criaTabela() {
-
-            //     // 7.1 Crio uma elemento com a tag <table> no HTML
-            //     const tabela = document.createElement('table');
-            //     tabela.classList.add('tabela-resultado')
-            //     // 7.2 Crio a estrutura do cabecalho da <table> no HTML
-            //     const trow = document.createElement('tr');
-            //     const theader = document.createElement('th');
-            //     const theader1 = document.createElement('th');
-            //     const theader2 = document.createElement('th');
-            //     const theader3 = document.createElement('th');
-            //     const theader4 = document.createElement('th');
-            //     const theader5 = document.createElement('th');
-            //     // 7.3 Crio a estrutura da segunda linha da <table>, que irão os dados do JSON
-            //     const trow1 = document.createElement('tr');
-            //     const tdlog = document.createElement('td');
-            //     const tdcomp = document.createElement('td');
-            //     const tdbairro = document.createElement('td');
-            //     const tduf = document.createElement('td');
-            //     const tdddd = document.createElement('td');
-            //     const tdcep = document.createElement('td');
-            //     // 7.4 Insiro um título em cada item do cabeçalho
-            //     theader.innerHTML = "Logradouro";
-            //     theader1.innerHTML = "Complemento";
-            //     theader2.innerHTML = "Bairro/Distrito";
-            //     theader3.innerHTML = "Localidade/UF";
-            //     theader4.innerHTML = "DDD";
-            //     theader5.innerHTML = "CEP";
-            //     // 7.5 Começo a ir montando/adicionando os elementos em ordem como se fosse montar uma <table> no HTML
-            //     tabela.appendChild(trow) // adiciono a primeira linha
-            //     tabela.appendChild(trow1) // adiciono a segunda linha
-            //     // 7.6 Vou adicionando em ordem os itens do cabeçalho
-            //     trow.appendChild(theader)
-            //     trow.appendChild(theader1)
-            //     trow.appendChild(theader2)
-            //     trow.appendChild(theader3)
-            //     trow.appendChild(theader4)
-            //     trow.appendChild(theader5)
-            //     // 7.7 Vou adicionando em ordem a segunda linha da tabela
-            //     trow1.appendChild(tdlog)
-            //     trow1.appendChild(tdcomp)
-            //     trow1.appendChild(tdbairro)
-            //     trow1.appendChild(tduf)
-            //     trow1.appendChild(tdddd)
-            //     trow1.appendChild(tdcep)
-            //     //7.8 Começo a colocar os dados do JSON em seus respectivos lugares(td) na <table>
-            //     tdlog.innerHTML = consultaCEpconvertida.logradouro;
-            //     tdcomp.innerHTML = consultaCEpconvertida.complemento;
-            //     tdbairro.innerHTML = consultaCEpconvertida.bairro;
-            //     tduf.innerHTML = consultaCEpconvertida.uf;
-            //     tdddd.innerHTML = consultaCEpconvertida.ddd;
-            //     tdcep.innerHTML = consultaCEpconvertida.cep;
-            //     // 7.9 No final da montagem, adiciono a <table> na div 'conteudo-resultado'
-            //     mostraResultado.appendChild(tabela);
-            // }
 
             // 9. Chamo a função para criar a tabela
             criaTabela(consultaCEpconvertida);
@@ -93,7 +36,7 @@
             // mostraResultado.style.display = "block";
         
     }
-
+    // 7. Crio uma função para criar uma tabela com os dados do json
     function criaTabela(cepzin){
         inserirAqui.innerHTML = `
         <tr>
@@ -113,6 +56,7 @@
             <td>${cepzin.cep}</td>
         </tr>`
 
+        mostraResultado.style.display = "block";
         inserirAqui.style.display = "block";
     }
 

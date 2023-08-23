@@ -53,6 +53,8 @@ html, body {
     color: whitesmoke;
 }
 
+/* Estilos da parte principal da page */
+
 .principal {
     display: flex;
     justify-content: space-evenly;
@@ -71,7 +73,9 @@ html, body {
     border: 0.5px solid var(--fundo-banner);
 }
 
-.cep-container {
+/* Estilos do campo de busca pelo CEP, inputs, labels e botões */
+
+.campoCEP-container {
     /* border: 1px solid; */
     padding: 0.5em;
     row-gap: 0.5em;
@@ -81,36 +85,25 @@ html, body {
 }
 
 .text-label {
+    font-size: 20px;
     font-family: var(--fonte-secundaria);
 }
 
-.tabela-resultado {
-    border-collapse: separate;
-    border: 2px solid var(--fundo-header);
-    border-radius: 5px;
-    overflow: hidden;
+.inputs {
+    padding: 0.3em;
+    border-radius: 3px;
+    border: 1px solid; 
 }
 
-.tabela-resultado th, .tabela-cep th {
-    font-family: var(--fonte-banner);
-    padding: 0.8em;
-    color: whitesmoke;
-    background-color: #284b63;
-    text-align: center;
-    font-size: 18px;
+.btnBuscarEND, .btnBuscarCEP {
+    font-family: var(--fonte-secundaria);
+    padding: 0.7em 1.7em;
+    font-size: 16px;
     font-weight: bold;
-}
-
-.tabela-resultado td, .tabela-cep td {
-    font-family: var(--fonte-principal);
-    padding: 0.6em;
-    text-align: center;
-    border-right: 0.1px solid;
-    border-bottom: 0.1px solid;
-}
-
-.tabela-resultado td:last-child, .tabela-cep td:last-child {
-    border-right: none;
+    border-radius: 5px;
+    border: none;
+    background-color: #284b63;
+    color: whitesmoke;
 }
 
 .btnNovaBuscaEND, .btnNovaBuscaCEP {
@@ -127,13 +120,14 @@ html, body {
     color: whitesmoke;
 }
 
-.cep-resultado-container {
-    display: block;
-    /* border: 1px solid; */
+/* Estilo do campo onde a tabela de resultado do CEP e Endereço irão e suas respectivas tabelas */
+
+.cep-resultado-container, .endereco-resultado-container {
+    display: none;
     padding: 0.5em;
 }
 
-.tabela-cep {
+.tabela-cep, .tabela-end {
     display: none;
     border-collapse: separate;
     border: 2px solid var(--fundo-header);
@@ -141,11 +135,29 @@ html, body {
     overflow: hidden;
 }
 
-/* .cep-resultado-container-mq {
-    
-} */
+.tabela-cep th, .tabela-end th {
+    font-family: var(--fonte-banner);
+    padding: 0.8em;
+    color: whitesmoke;
+    background-color: #284b63;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
 
-/* AGORA O CSS DO ENDERECO */
+.tabela-cep td, .tabela-end td {
+    font-family: var(--fonte-principal);
+    padding: 0.6em;
+    text-align: center;
+    border-right: 0.1px solid;
+    border-bottom: 0.1px solid;
+}
+
+.tabela-cep td:last-child, .tabela-end td:last-child {
+    border-right: none;
+}
+
+/* Estilos do campo de busca pelo Endereço e o campo select*/
 
 .endereco-container {
     /* border: 1px solid; */
@@ -168,17 +180,7 @@ html, body {
     column-gap: 0.5em;
 }
 
-.text-label {
-    font-size: 20px;
-}
-
-.inputs {
-    padding: 0.3em;
-    border-radius: 3px;
-    border: 1px solid; 
-}
-
-.ufs-select {
+.uf-select {
     font-size: 14px;
 }
 
@@ -187,20 +189,7 @@ select option {
     text-align: center;
 }
 
-.btnBuscarEND, .btnBuscarCEP {
-    font-family: var(--fonte-secundaria);
-    padding: 0.7em 1.7em;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    border: none;
-    background-color: #284b63;
-    color: whitesmoke;
-}
-
-.endereco-resultado-container {
-    display: none;
-}
+/* Estilos do rodapé da page */
 
 .rodape {
     padding: 1em;
@@ -214,13 +203,6 @@ select option {
 }
 
 /* MEDIA QUERIES */
-
-.cep-resultado-container-mq {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
-    padding: 0.5em;
-}
 
 /* Telas piticas: 600px and down */
 /* Smartphones: 600px and up */

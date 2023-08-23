@@ -4,87 +4,19 @@
 > O código de criação da tabela e inserção de dados estão extensos, eu sei disso. Por enquanto é o modo com que eu aprendi a fazer o site funcionar.
     ------------------------------------------ */
 
-    var endereco = document.getElementById('endereco');
-    var cidade = document.getElementById('cidade');
-    var uf = document.getElementById('ufs');
-    var mostraResult = document.getElementById('end-resultado')
+    // 1. Referencio os elementos do HTML que serão usados
+    var endereco = document.getElementById('input-endereco');
+    var cidade = document.getElementById('input-cidade');
+    var uf = document.getElementById('input-uf');
     var btnBuscarEndereco = document.getElementById('submit-endereco');
+    var mostraResult = document.getElementById('end-resultado');
+    const inserirEnd = document.getElementById('table-end');
 
     async function buscaEndereco(end,cid,uf){
 
         try{
             var consultaEndereco = await fetch(`https://viacep.com.br/ws/${uf}/${cid}/${end}/json/`);
             var consultaEndConvertido = await consultaEndereco.json();
-            
-                function criaTabela() {
-                    const containerTabela = document.createElement('table');
-                    containerTabela.classList.add('tabela-resultado')
-                    const trow = document.createElement('tr');
-                    const theader = document.createElement('th');
-                    const theader1 = document.createElement('th');
-                    const theader2 = document.createElement('th');
-                    const theader3 = document.createElement('th');
-                    const theader4 = document.createElement('th');
-                    const theader5 = document.createElement('th');
-                    containerTabela.appendChild(trow)
-                    trow.appendChild(theader)
-                    trow.appendChild(theader1)
-                    trow.appendChild(theader2)
-                    trow.appendChild(theader3)
-                    trow.appendChild(theader4)
-                    trow.appendChild(theader5)
-                    theader.innerHTML = "Logradouro";
-                    theader1.innerHTML = "Complemento";
-                    theader2.innerHTML = "Bairro/Distrito";
-                    theader3.innerHTML = "Localidade/UF";
-                    theader4.innerHTML = "DDD";
-                    theader5.innerHTML = "CEP";
-        
-                    // Para cada resultado encontrado na Promise, vai criar um <tr> e campos <td> na table, preenchendo os campos <td> com os dados do elemento. No final, vai acrescentar cada elemento em seu respectivo pai
-                    consultaEndConvertido.forEach((elemento) =>  {
-                        const trow1 = document.createElement('tr')
-                        const campoLog = document.createElement('td')
-                        const campoComp = document.createElement('td')
-                        const campoBairro = document.createElement('td')
-                        const campoUF = document.createElement('td')
-                        const campoDDD = document.createElement('td')
-                        const campoCEP = document.createElement('td')
-        
-                        campoLog.innerHTML = elemento.logradouro
-                        campoComp.innerHTML = elemento.complemento
-                        campoBairro.innerHTML = elemento.bairro
-                        campoUF.innerHTML = elemento.uf
-                        campoDDD.innerHTML = elemento.ddd
-                        campoCEP.innerHTML = elemento.cep
-                        trow1.appendChild(campoLog)
-                        trow1.appendChild(campoComp)
-                        trow1.appendChild(campoBairro)
-                        trow1.appendChild(campoUF)
-                        trow1.appendChild(campoDDD)
-                        trow1.appendChild(campoCEP)
-                        containerTabela.appendChild(trow1)
-                    })
-        
-                    mostraResult.appendChild(containerTabela)
-                }
-
-                function criaBotaoNovabusca(){    
-                    // 8.1 Crio o elemento <button>
-                    const btnNovaBuscaEND = document.createElement('button');
-                    // 8.2 Adiciono um id à ele
-                    btnNovaBuscaEND.id = 'nova-buscaEND';
-                    btnNovaBuscaEND.classList.add('btnNovaBuscaEND')
-                    // 8.3 Adiciono um texto ao botão
-                    btnNovaBuscaEND.innerHTML = "Nova busca";
-                        // 8.4 Adiciono o botão à div, logo após a <table> 
-                        mostraResult.appendChild(btnNovaBuscaEND);
-                    // 8.5 Crio um evento onde ao clicar neste botão, a div some do display E é limpada para fazer uma nova busca
-                    btnNovaBuscaEND.addEventListener("click", () => {
-                        location.reload();
-                        btnBuscarEndereco.style.display = "block";
-                        endereco.focus();
-                    })
-                }
 
           // Caso o usuário tente fazer uma busca com menos de 3 caracteres em algum campo, o erro é mostrado na tela. 
         } catch(erro) { 
@@ -93,7 +25,7 @@
         }
          // Faço uma validação e verifico se a consulta retornou algum endereço como resultado no array. Se for true, vai executar as funções. Se for false, vai mostrar o erro na tela
         if(consultaEndConvertido.length > 0){
-            criaTabela();
+            criaTabela(consultaEndConvertido);
             criaBotaoNovabusca();
             mostraResult.style.display ="block";
         } else {
@@ -102,6 +34,51 @@
             cidade.value ="";
             btnBuscarEndereco.style.display = "block";
         }
+    }
+
+    function criaTabela(enderecos) {
+
+        inserirEnd.innerHTML = `
+        <tr>
+            <th>Logradouro</th>
+            <th>Complemento</th>
+            <th>Bairro</th>
+            <th>Cidade/UF</th>
+            <th>DDD</th>
+            <th>CEP</th>
+        </tr>`
+
+        enderecos.forEach((endereco) =>  {
+            inserirEnd.innerHTML += `
+            <tr>
+                <td>${endereco.logradouro}</td>
+                <td>${endereco.complemento}</td>
+                <td>${endereco.bairro}</td>
+                <td>${endereco.uf}</td>
+                <td>${endereco.ddd}</td>
+                <td>${endereco.cep}</td>
+            </tr>            `        
+        })
+
+        mostraResult.style.display = "block";
+        inserirEnd.style.display = "block";
+    }
+
+    function criaBotaoNovabusca(){    
+        // 8.1 Crio o elemento <button>
+        const btnNovaBuscaEND = document.createElement('button');
+        // 8.2 Adiciono um id à ele
+        btnNovaBuscaEND.classList.add('btnNovaBuscaEND')
+        // 8.3 Adiciono um texto ao botão
+        btnNovaBuscaEND.innerHTML = "Nova busca";
+            // 8.4 Adiciono o botão à div, logo após a <table> 
+            mostraResult.appendChild(btnNovaBuscaEND);
+        // 8.5 Crio um evento onde ao clicar neste botão, a div some do display E é limpada para fazer uma nova busca
+        btnNovaBuscaEND.addEventListener("click", () => {
+            location.reload();
+            btnBuscarEndereco.style.display = "block";
+            endereco.focus();
+        })
     }
 
     btnBuscarEndereco.addEventListener("click", () => {
