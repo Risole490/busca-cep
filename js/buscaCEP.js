@@ -4,8 +4,11 @@
 > Diferente da versão 'buscaCEP', que apenas substitui os valores dos campos(<td>) da tabela já existente no HTML.
 > O código de criação da tabela e inserção de dados estão extensos, eu sei disso. Por enquanto é o modo com que eu aprendi a fazer o site funcionar.
     ------------------------------------------ */
+    const mq600 = window.matchMedia("(max-width: 600px)");
+
 
     // 1. Capturo os componentes do HTML
+    const containerBuscaCEP = document.getElementById('buscaCEP-containerr');
     var cep = document.getElementById('input-cep');
     var btnBuscarCEP = document.getElementById('submit');
     var mostraResultado = document.getElementById('cep-resultado');
@@ -29,11 +32,14 @@
         }
 
             // 9. Chamo a função para criar a tabela
-            criaTabela(consultaCEpconvertida);
+
+            if(mq600.matches){
+                criaDivMQ(consultaCEpconvertida);
+            } else 
+                criaTabela(consultaCEpconvertida);
+
             // 10. Chamo a função para criar o botao de nova busca
             criaBotaoNovabusca();
-            // 11. Após os dados serem preenchidos na tabela, eu mostro o container que está a tabela, no display block, que estava como "none"
-            // mostraResultado.style.display = "block";
         
     }
     // 7. Crio uma função para criar uma tabela com os dados do json
@@ -59,6 +65,27 @@
 
         mostraResultado.style.display = "block";
         inserirAqui.style.display = "block";
+    }
+
+    function criaDivMQ(cepzin){
+        mostraResultado.innerHTML = `
+        <div class="resultado-MQ600">
+            <h3>Logradouro</h3>
+            <p>${cepzin.logradouro}</p>
+            <h3>Complemento</h3>
+            <p>${cepzin.complemento}</p>
+            <h3>Bairro</h3>
+            <p>${cepzin.bairro}</p>
+            <h3>Cidade/UF</h3>
+            <p>${cepzin.uf}</p>
+            <h3>DDD</h3>
+            <p>${cepzin.ddd}</p>
+            <h3>CEP</h3>
+            <p>${cepzin.cep}</p>
+        </div>
+        `
+
+        mostraResultado.style.display = "block";
     }
 
     // 8. Crio uma função para criar o botao de nova busca
@@ -87,5 +114,6 @@
         buscaCEP(cep.value);
         cep.value = "";
         btnBuscarCEP.style.display = "none";
+        containerBuscaCEP.style.display = "none";
     })
 })()
