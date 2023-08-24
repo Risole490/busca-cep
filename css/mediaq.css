@@ -1,0 +1,95 @@
+/* MEDIA QUERIES */
+
+/* Telas piticas: 600px and down */
+/* Smartphones: 600px and up */
+/* Tablets: 768px and up */
+/* Desktop: 992px and up */
+/* Telas enormes: 1200px and up */
+
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+
+    .cabecalho {
+        margin: 0 1em;
+    }
+    .cabecalho-text {
+        font-size: 22px;
+    }
+
+    .banner {
+        margin: 0 2em;
+    }
+
+    .banner-text {
+        font-size: 20px;
+    }
+
+    .principal {
+        flex-direction: column;
+    }
+
+    .linha-meio {
+        height: 0;
+        width: 85vw;
+    }
+
+    .buscaCEP-container {
+        display: flex;
+        column-gap: 0.5em;
+        align-items: center;
+    }
+
+    .text-label {
+        font-size: 18px;
+    }
+
+    .endereco-container-title {
+        font-size: 24px;
+    }
+
+    .busca-endereco-container {
+        flex-direction: column;
+        row-gap: 0.5em;
+    }
+
+    .uf-select {
+        width: 80px;
+    }
+
+    .btnBuscarEND, .btnBuscarCEP {
+        padding: 0.4em 1em;
+    }
+
+    .resultado-MQ600 {
+        background-color: #284b63;
+        border: 5px outset #1C6EA4;
+        border-radius: 1px 19px 5px 16px;
+        -webkit-box-shadow: -9px 7px 6px 3px rgba(0,0,0,0.64); 
+        box-shadow: -9px 7px 6px 3px rgba(0,0,0,0.64);
+        padding: 0.2em 0.7em 0.7em 0.7em;
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.4em;
+    }
+
+    .resultado-MQ600 h3 {
+        color: antiquewhite;
+        font-family: var(--fonte-secundaria);
+        margin-top: 0.4em;
+        font-size: 18px;
+        font-weight: 550;
+    }
+
+    .resultado-MQ600 p {
+        color: whitesmoke;
+        font-family: var(--fonte-principal);
+        margin-top: 0.1em;
+    }
+
+    .btnNovaBuscaCEP {
+        position: inherit;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    
+}
