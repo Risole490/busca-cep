@@ -122,7 +122,7 @@ html, body {
 
 /* Estilo do campo onde a tabela de resultado do CEP e Endereço irão e suas respectivas tabelas */
 
-.cep-resultado-container, .endereco-resultado-container {
+.cep-resultado-container{
     display: none;
     padding: 0.5em;
 }

@@ -6,11 +6,12 @@
 /* Desktop: 992px and up */
 /* Telas enormes: 1200px and up */
 
-@media only screen and (min-width: 320px) and (max-width: 600px) {
+@media only screen and (min-width: 320px) and (max-width: 1024px) {
 
     .cabecalho {
         margin: 0 1em;
     }
+
     .cabecalho-text {
         font-size: 22px;
     }
@@ -59,7 +60,7 @@
         padding: 0.4em 1em;
     }
 
-    .resultado-MQ600 {
+    .resultado-MQCEP, .resultado-MQEND {
         background-color: #284b63;
         border: 5px outset #1C6EA4;
         border-radius: 1px 19px 5px 16px;
@@ -71,7 +72,7 @@
         row-gap: 0.4em;
     }
 
-    .resultado-MQ600 h3 {
+    .resultado-MQCEP h3, .resultado-MQEND h3 {
         color: antiquewhite;
         font-family: var(--fonte-secundaria);
         margin-top: 0.4em;
@@ -79,17 +80,41 @@
         font-weight: 550;
     }
 
-    .resultado-MQ600 p {
+    .resultado-MQCEP p, .resultado-MQEND p {
         color: whitesmoke;
         font-family: var(--fonte-principal);
         margin-top: 0.1em;
     }
 
-    .btnNovaBuscaCEP {
+    .btnNovaBuscaCEP, .btnNovaBuscaEND {
         position: inherit;
+    }
+
+    /* Estilos dos Endereços */
+
+    .end-resultado-container {
+        flex-direction: column;
+        row-gap: 0.5em;
     }
 }
 
-@media only screen and (min-width: 601px) and (max-width: 768px) {
-    
+@media only screen and (min-width: 701px){
+
+    .tabela-cep td, .tabela-end td{
+        vertical-align: middle;
+    }
+
+    .btnNovaBuscaCEP, .btnNovaBuscaEND {
+        position: relative;
+    }
+}
+
+@media only screen and (min-width: 769px){
+    .cabecalho-text {
+        font-size: 26px;
+    }
+
+    .banner-text {
+        font-size: 24px;
+    }
 }
